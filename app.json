@@ -1,0 +1,14 @@
+{
+  "name": "birthday",
+  "displayName": "birthday",
+  "expo": {
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow 5tenedores to use your location."
+        }
+      ]
+    ]
+  }
+}
