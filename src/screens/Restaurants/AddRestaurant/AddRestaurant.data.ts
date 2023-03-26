@@ -7,12 +7,7 @@ export function initialValues() {
     phone: '',
     email: '',
     description: '',
-    // city: '',
-    // state: '',
-    // zip: '',
-    // cuisine: '',
-    // website: '',
-    // notes: '',
+    location: null,
   };
 }
 
@@ -25,5 +20,6 @@ export function validationSchema() {
       .email('Wrong email format')
       .required('Email is required'),
     description: Yup.string().required('Description is required'),
+    location: Yup.object().required('Location is required'),
   });
 }

@@ -4,13 +4,16 @@ import { Modal } from '../../../Shared';
 import * as Location from 'expo-location';
 import Toast from 'react-native-toast-message';
 import MapView, { Marker } from 'react-native-maps';
+import { View } from 'react-native';
+import { Button } from 'react-native-elements';
 
 type MapFormProps = {
   show: boolean;
   close: () => void;
+  formik: any;
 };
 
-export function MapForm({ show, close }: MapFormProps) {
+export function MapForm({ show, close, formik }: MapFormProps) {
   const [location, setLocation] = useState({
     latitude: 0.001,
     longitude: 0.001,
@@ -31,18 +34,21 @@ export function MapForm({ show, close }: MapFormProps) {
         return;
       }
 
-      const location = await Location.getCurrentPositionAsync({});
-      console.log(location, 'location2222');
+      const locationCurrent = await Location.getCurrentPositionAsync({});
       setLocation({
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
+        latitude: locationCurrent.coords.latitude,
+        longitude: locationCurrent.coords.longitude,
         latitudeDelta: 0.001,
         longitudeDelta: 0.001,
       });
     })();
-
-    //console.log(location, 'location');
   }, []);
+
+  const saveLocation = () => {
+    console.log(location, 'location');
+    formik.setFieldValue('location', location);
+    close();
+  };
 
   return (
     <Modal show={show} close={close}>
@@ -53,6 +59,20 @@ export function MapForm({ show, close }: MapFormProps) {
         style={styles.map}>
         <Marker draggable={true} coordinate={location} />
       </MapView>
+      <View style={styles.mapActions}>
+        <Button
+          title="Guardar"
+          onPress={saveLocation}
+          containerStyle={styles.btnMapContainerSave}
+          buttonStyle={styles.btnMapSave}
+        />
+        <Button
+          title="Cerrar"
+          onPress={close}
+          containerStyle={styles.btnMapContainerCancel}
+          buttonStyle={styles.btnMapCancel}
+        />
+      </View>
     </Modal>
   );
 }

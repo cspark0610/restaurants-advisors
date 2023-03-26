@@ -28,12 +28,12 @@ export function InfoForm({ formik }: any) {
       <View style={styles.content}>
         <Input
           placeholder="Nombre del restaurante"
-          onChangeText={text => formik.setFielValue('name', text)}
+          onChangeText={text => formik.setFieldValue('name', text)}
           errorMessage={formik.errors.name}
         />
         <Input
           placeholder="Direccion"
-          onChangeText={text => formik.setFielValue('address', text)}
+          onChangeText={text => formik.setFieldValue('address', text)}
           errorMessage={formik.errors.address}
           rightIcon={{
             type: 'material-community',
@@ -44,23 +44,23 @@ export function InfoForm({ formik }: any) {
         />
         <Input
           placeholder="Telefono"
-          onChangeText={text => formik.setFielValue('phone', text)}
+          onChangeText={text => formik.setFieldValue('phone', text)}
           errorMessage={formik.errors.phone}
         />
         <Input
           placeholder="Email"
-          onChangeText={text => formik.setFielValue('email', text)}
+          onChangeText={text => formik.setFieldValue('email', text)}
           errorMessage={formik.errors.email}
         />
         <Input
           placeholder="Descripcion"
           multiline={true}
           inputContainerStyle={styles.textArea}
-          onChangeText={text => formik.setFielValue('description', text)}
+          onChangeText={text => formik.setFieldValue('description', text)}
           errorMessage={formik.errors.description}
         />
       </View>
-      <MapForm show={showMap} close={onOpenCloseIconMap} />
+      <MapForm show={showMap} close={onOpenCloseIconMap} formik={formik} />
     </>
   );
 }
