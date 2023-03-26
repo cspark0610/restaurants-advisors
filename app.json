@@ -6,9 +6,10 @@
       [
         "expo-location",
         {
-          "locationAlwaysAndWhenInUsePermission": "Allow 5tenedores to use your location."
+          "locationAlwaysAndWhenInUsePermission": "Allow restaurans-advisors to use your location."
         }
       ]
-    ]
+    ],
+    "jsEngine": "hermes"
   }
 }

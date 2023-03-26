@@ -1,16 +1,16 @@
-import React, {useState} from 'react';
-import {View, Text} from 'react-native';
-import {ListItem, Icon} from 'react-native-elements';
-import {Modal} from '../../components';
-import {ChangeDisplayNameForm} from './ChangeDisplayNameForm';
-import {ChangeDisplayEmailForm} from './ChangeDisplayEmailForm';
-import {ChangePasswordForm} from './ChangePasswordForm';
+import React, { useState } from 'react';
+import { View, Text } from 'react-native';
+import { ListItem, Icon } from 'react-native-elements';
+import { Modal } from '../../components';
+import { ChangeDisplayNameForm } from './ChangeDisplayNameForm';
+import { ChangeDisplayEmailForm } from './ChangeDisplayEmailForm';
+import { ChangePasswordForm } from './ChangePasswordForm';
 
 type AccountOptionsProps = {
   reload: () => void;
 };
 
-export function AccountOptions({reload}: AccountOptionsProps) {
+export function AccountOptions({ reload }: AccountOptionsProps) {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [renderComponent, setRenderComponent] = useState<JSX.Element | null>(
     null,

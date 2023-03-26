@@ -1,11 +1,11 @@
-import {View} from 'react-native';
-import React, {useState} from 'react';
-import {InfoUser, AccountOptions} from '../../../components/Account';
-import {Button} from 'react-native-elements';
-import {styles} from './UserLogged.styles';
-import {LoadingModal} from '../../../components/Shared';
+import { View } from 'react-native';
+import React, { useState } from 'react';
+import { InfoUser, AccountOptions } from '../../../components/Account';
+import { Button } from 'react-native-elements';
+import { styles } from './UserLogged.styles';
+import { LoadingModal } from '../../../components/Shared';
 
-import {getAuth, signOut} from 'firebase/auth';
+import { getAuth, signOut } from 'firebase/auth';
 
 export function UserLogged() {
   const [loading, setLoading] = useState<boolean>(false);

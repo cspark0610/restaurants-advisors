@@ -1,50 +1,50 @@
 import React from 'react';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import {RestaurantStack} from './RestaurantStack';
-import {FavoriteStack} from './FavoriteStack';
-import {RankingStack} from './RankingStack';
-import {SearchStack} from './SearchStack';
-import {AccountStack} from './AccountStack';
+import { RestaurantStack } from './RestaurantStack';
+import { FavoriteStack } from './FavoriteStack';
+import { RankingStack } from './RankingStack';
+import { SearchStack } from './SearchStack';
+import { AccountStack } from './AccountStack';
 
-import {Icon} from 'react-native-elements';
-import {screen} from '../utils/screenName';
+import { Icon } from 'react-native-elements';
+import { screen } from '../utils/screenName';
 
 const Tab = createBottomTabNavigator();
 
 export function AppNavigation() {
   return (
     <Tab.Navigator
-      screenOptions={({route}) => ({
+      screenOptions={({ route }) => ({
         headerShown: false,
         tabBarActiveTintColor: '#00a680',
         tabBarInactiveTintColor: '#646464',
-        tabBarIcon: ({color, size}) => screenOptions(route, color, size),
+        tabBarIcon: ({ color, size }) => screenOptions(route, color, size),
       })}>
       <Tab.Screen
         name={screen.restaurant.tab}
         component={RestaurantStack}
-        options={{title: 'Restaurantes'}}
+        options={{ title: 'Restaurantes' }}
       />
       <Tab.Screen
         name={screen.favorites.tab}
         component={FavoriteStack}
-        options={{title: 'Favoritos'}}
+        options={{ title: 'Favoritos' }}
       />
       <Tab.Screen
         name={screen.ranking.tab}
         component={RankingStack}
-        options={{title: 'Ranking'}}
+        options={{ title: 'Ranking' }}
       />
       <Tab.Screen
         name={screen.search.tab}
         component={SearchStack}
-        options={{title: 'Busqueda'}}
+        options={{ title: 'Busqueda' }}
       />
       <Tab.Screen
         name={screen.account.tab}
         component={AccountStack}
-        options={{title: 'Cuenta'}}
+        options={{ title: 'Cuenta' }}
       />
     </Tab.Navigator>
   );

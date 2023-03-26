@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import {View} from 'react-native';
-import {Input, Button} from 'react-native-elements';
-import {useFormik} from 'formik';
-import {styles} from './ChangeDisplayEmailForm.styles';
-import {initialValues, validationSchema} from './ChangeDisplayEmailForm.data';
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import { Input, Button } from 'react-native-elements';
+import { useFormik } from 'formik';
+import { styles } from './ChangeDisplayEmailForm.styles';
+import { initialValues, validationSchema } from './ChangeDisplayEmailForm.data';
 
 import Toast from 'react-native-toast-message';
 import {

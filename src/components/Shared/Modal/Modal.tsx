@@ -1,6 +1,6 @@
 import React from 'react';
-import {Overlay} from 'react-native-elements';
-import {styles} from './Modal.styles';
+import { Overlay } from 'react-native-elements';
+import { styles } from './Modal.styles';
 
 type ModalProps = {
   show: boolean;
@@ -9,7 +9,7 @@ type ModalProps = {
 };
 
 export function Modal(props: ModalProps) {
-  const {show, close, children} = props;
+  const { show, close, children } = props;
   return (
     <Overlay
       isVisible={show}

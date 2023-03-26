@@ -1,10 +1,10 @@
-import {View} from 'react-native';
-import {Button} from 'react-native-elements';
+import { View } from 'react-native';
+import { Button } from 'react-native-elements';
 import React from 'react';
-import {styles} from './AddRestaurant.styles';
-import {InfoForm} from '../../../components/Restaurants/AddRestaurant';
-import {useFormik} from 'formik';
-import {initialValues, validationSchema} from './AddRestaurant.data';
+import { styles } from './AddRestaurant.styles';
+import { InfoForm } from '../../../components/Restaurants/AddRestaurant';
+import { useFormik } from 'formik';
+import { initialValues, validationSchema } from './AddRestaurant.data';
 
 export function AddRestaurant() {
   const onSubmit = async (formData: any) => {

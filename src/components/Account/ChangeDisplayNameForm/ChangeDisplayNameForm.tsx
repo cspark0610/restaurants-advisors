@@ -1,11 +1,11 @@
 import React from 'react';
-import {View} from 'react-native';
-import {Input, Button} from 'react-native-elements';
-import {styles} from './ChangeDisplayNameForm.styles';
-import {useFormik} from 'formik';
-import {initialValues, validationSchema} from './ChangeDisplayNameForm.data';
+import { View } from 'react-native';
+import { Input, Button } from 'react-native-elements';
+import { styles } from './ChangeDisplayNameForm.styles';
+import { useFormik } from 'formik';
+import { initialValues, validationSchema } from './ChangeDisplayNameForm.data';
 import Toast from 'react-native-toast-message';
-import {getAuth, updateProfile} from 'firebase/auth';
+import { getAuth, updateProfile } from 'firebase/auth';
 
 type ChangeDisplayNameFormProps = {
   onClose: () => void;
@@ -21,10 +21,10 @@ export function ChangeDisplayNameForm({
     validateOnChange: false,
     validationSchema: validationSchema(),
 
-    onSubmit: async ({displayName}) => {
+    onSubmit: async ({ displayName }) => {
       const currentUser = getAuth().currentUser!;
       try {
-        await updateProfile(currentUser, {displayName});
+        await updateProfile(currentUser, { displayName });
 
         onReload();
         onClose();

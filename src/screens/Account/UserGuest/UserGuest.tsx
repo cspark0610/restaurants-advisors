@@ -1,9 +1,9 @@
 import React from 'react';
-import {ScrollView} from 'react-native';
-import {Text, Button, Image} from 'react-native-elements';
-import {styles} from './UserGuest.styles';
-import {useNavigation} from '@react-navigation/native';
-import {screen} from '../../../utils/screenName';
+import { ScrollView } from 'react-native';
+import { Text, Button, Image } from 'react-native-elements';
+import { styles } from './UserGuest.styles';
+import { useNavigation } from '@react-navigation/native';
+import { screen } from '../../../utils/screenName';
 
 export function UserGuest() {
   const navigation = useNavigation();

@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
-import {View} from 'react-native';
-import {Input, Button, Icon} from 'react-native-elements';
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import { Input, Button, Icon } from 'react-native-elements';
 
-import {styles} from './LoginForm.styles';
-import {useFormik} from 'formik';
-import {validationSchema, initialValues} from './LoginForm.data';
+import { styles } from './LoginForm.styles';
+import { useFormik } from 'formik';
+import { validationSchema, initialValues } from './LoginForm.data';
 
 import Toast from 'react-native-toast-message';
-import {useNavigation} from '@react-navigation/native';
-import {screen} from '../../../utils/screenName';
+import { useNavigation } from '@react-navigation/native';
+import { screen } from '../../../utils/screenName';
 
 //auth firebase login logic
-import {getAuth, signInWithEmailAndPassword} from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 type LoginFormProps = {
   email: string;

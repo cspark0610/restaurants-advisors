@@ -1,7 +1,7 @@
-import {Text} from 'react-native';
-import React, {useState, useEffect} from 'react';
-import {styles} from './MapForm.styles';
-import {Modal} from '../../../Shared';
+import { Text } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { styles } from './MapForm.styles';
+import { Modal } from '../../../Shared';
 import * as Location from 'expo-location';
 import Toast from 'react-native-toast-message';
 
@@ -10,7 +10,7 @@ type MapFormProps = {
   close: () => void;
 };
 
-export function MapForm({show, close}: MapFormProps) {
+export function MapForm({ show, close }: MapFormProps) {
   const [location, setLocation] = useState({
     latitude: 0.001,
     longitude: 0.001,
@@ -20,7 +20,7 @@ export function MapForm({show, close}: MapFormProps) {
 
   useEffect(() => {
     (async () => {
-      const {status} = await Location.requestForegroundPermissionsAsync();
+      const { status } = await Location.requestForegroundPermissionsAsync();
 
       if (status !== 'granted') {
         Toast.show({

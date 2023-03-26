@@ -1,12 +1,12 @@
-import {Text, View} from 'react-native';
-import React, {useState, useEffect} from 'react';
-import {Icon} from 'react-native-elements/';
-import {screen} from '../../../utils/screenName';
-import {useNavigation} from '@react-navigation/native';
-import {styles} from './Restaurant.styles';
+import { Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Icon } from 'react-native-elements/';
+import { screen } from '../../../utils/screenName';
+import { useNavigation } from '@react-navigation/native';
+import { styles } from './Restaurant.styles';
 
 //firebase
-import {getAuth, onAuthStateChanged, User} from 'firebase/auth';
+import { getAuth, onAuthStateChanged, User } from 'firebase/auth';
 
 export function Restaurant() {
   // la navigation tb se recibe desde props si estan en el mismo stack, siempre se usan con Screens

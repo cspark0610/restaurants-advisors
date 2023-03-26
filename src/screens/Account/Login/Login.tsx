@@ -1,10 +1,10 @@
 import React from 'react';
-import {ScrollView, View} from 'react-native';
-import {Text, Image} from 'react-native-elements';
-import {styles} from './Login.styles';
-import {useNavigation} from '@react-navigation/native';
-import {screen} from '../../../utils/screenName';
-import {LoginForm} from '../../../components/Auth';
+import { ScrollView, View } from 'react-native';
+import { Text, Image } from 'react-native-elements';
+import { styles } from './Login.styles';
+import { useNavigation } from '@react-navigation/native';
+import { screen } from '../../../utils/screenName';
+import { LoginForm } from '../../../components/Auth';
 
 export function Login() {
   const navigation = useNavigation();

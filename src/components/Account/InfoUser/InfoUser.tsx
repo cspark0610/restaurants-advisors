@@ -1,9 +1,9 @@
-import {View, Text} from 'react-native';
-import React, {useState} from 'react';
-import {Avatar} from 'react-native-elements';
-import {getAuth, User, UserInfo, updateProfile} from 'firebase/auth';
-import {styles} from './InfoUser.styles';
-import {Account} from '../../../screens/Account/Account';
+import { View, Text } from 'react-native';
+import React, { useState } from 'react';
+import { Avatar } from 'react-native-elements';
+import { getAuth, User, UserInfo, updateProfile } from 'firebase/auth';
+import { styles } from './InfoUser.styles';
+import { Account } from '../../../screens/Account/Account';
 import {
   getStorage,
   ref,
@@ -21,9 +21,10 @@ type InfoUserProps = {
   setLoadingText: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export function InfoUser({setLoading, setLoadingText}: InfoUserProps) {
+export function InfoUser({ setLoading, setLoadingText }: InfoUserProps) {
   const user: User = getAuth().currentUser!;
-  const {uid, displayName, email, photoURL} = user.providerData[0] as UserInfo;
+  const { uid, displayName, email, photoURL } = user
+    .providerData[0] as UserInfo;
 
   const [avatar, setAvatar] = useState(photoURL);
 
@@ -76,8 +77,8 @@ export function InfoUser({setLoading, setLoadingText}: InfoUserProps) {
         size="large"
         rounded
         containerStyle={styles.avatar}
-        icon={{type: 'material', name: 'person'}}
-        source={{uri: avatar!}}>
+        icon={{ type: 'material', name: 'person' }}
+        source={{ uri: avatar! }}>
         <Avatar.Accessory size={24} onPress={changeAvatar} />
       </Avatar>
       <View>

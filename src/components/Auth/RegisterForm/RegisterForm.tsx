@@ -1,18 +1,18 @@
-import React, {useState} from 'react';
-import {View} from 'react-native';
-import {Button, Icon, Input} from 'react-native-elements';
-import {styles} from './RegisterForm.styles';
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import { Button, Icon, Input } from 'react-native-elements';
+import { styles } from './RegisterForm.styles';
 import Toast from 'react-native-toast-message';
 
 // useFormik hook
-import {useFormik} from 'formik';
-import {initialValues, validationSchema} from './RegisterForm.data';
+import { useFormik } from 'formik';
+import { initialValues, validationSchema } from './RegisterForm.data';
 
 // firebase auth
-import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 // navegacion una vez registrado se navega a la pantalla de login, que es la pantalla anterior , usar un goBack()
-import {useNavigation} from '@react-navigation/native';
-import {screen} from '../../../utils/screenName';
+import { useNavigation } from '@react-navigation/native';
+import { screen } from '../../../utils/screenName';
 
 type RegisterFormProps = {
   email: string;

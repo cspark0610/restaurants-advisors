@@ -1,8 +1,8 @@
-import {View} from 'react-native';
-import {Input} from 'react-native-elements';
-import React, {useState} from 'react';
-import {styles} from './InfoForm.styles';
-import {MapForm} from '../MapForm';
+import { View } from 'react-native';
+import { Input } from 'react-native-elements';
+import React, { useState } from 'react';
+import { styles } from './InfoForm.styles';
+import { MapForm } from '../MapForm';
 
 // type InfoFormProps = {
 //   formik: {
@@ -17,7 +17,7 @@ import {MapForm} from '../MapForm';
 //   };
 // };
 
-export function InfoForm({formik}) {
+export function InfoForm({ formik }) {
   const [showMap, setShowMap] = useState(false);
 
   const onOpenCloseIconMap = () => {

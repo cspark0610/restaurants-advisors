@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import {View} from 'react-native';
-import {styles} from './ChangePasswordForm.styles';
-import {Input, Button} from 'react-native-elements';
-import {useFormik} from 'formik';
-import {initialValues, validationSchema} from './ChangePasswordForm.data';
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import { styles } from './ChangePasswordForm.styles';
+import { Input, Button } from 'react-native-elements';
+import { useFormik } from 'formik';
+import { initialValues, validationSchema } from './ChangePasswordForm.data';
 
 import Toast from 'react-native-toast-message';
 import {
@@ -25,7 +25,7 @@ type FormData = {
   confirmNewPassword: string;
 };
 
-export function ChangePasswordForm({onClose}: ChangePasswordFormProps) {
+export function ChangePasswordForm({ onClose }: ChangePasswordFormProps) {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const onShowPassword = () => {
