@@ -13,7 +13,7 @@ LogBox.ignoreAllLogs();
 import * as Font from 'expo-font';
 import * as Icon from '@expo/vector-icons';
 
-export const _loadResourcesAsync = async () => {
+export const loadResourcesAsync = async () => {
   return Promise.all([
     Font.loadAsync({
       ...Icon.Ionicons.font,
@@ -25,7 +25,7 @@ export const _loadResourcesAsync = async () => {
 // se debe inicializar la app de firebase desde el componete ppal de la app
 initializeApp(firebaseConfig);
 function App() {
-  _loadResourcesAsync();
+  loadResourcesAsync();
   return (
     <>
       <NavigationContainer>

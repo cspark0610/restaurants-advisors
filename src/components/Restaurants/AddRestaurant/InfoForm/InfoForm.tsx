@@ -17,7 +17,7 @@ import { MapForm } from '../MapForm';
 //   };
 // };
 
-export function InfoForm({ formik }) {
+export function InfoForm({ formik }: any) {
   const [showMap, setShowMap] = useState(false);
 
   const onOpenCloseIconMap = () => {

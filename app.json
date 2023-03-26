@@ -9,7 +9,6 @@
           "locationAlwaysAndWhenInUsePermission": "Allow restaurans-advisors to use your location."
         }
       ]
-    ],
-    "jsEngine": "hermes"
+    ]
   }
 }

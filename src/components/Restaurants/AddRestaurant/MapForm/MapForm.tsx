@@ -1,9 +1,9 @@
-import { Text } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import { styles } from './MapForm.styles';
 import { Modal } from '../../../Shared';
 import * as Location from 'expo-location';
 import Toast from 'react-native-toast-message';
+import MapView, { Marker } from 'react-native-maps';
 
 type MapFormProps = {
   show: boolean;
@@ -32,7 +32,7 @@ export function MapForm({ show, close }: MapFormProps) {
       }
 
       const location = await Location.getCurrentPositionAsync({});
-      console.log(location, 'location');
+      console.log(location, 'location2222');
       setLocation({
         latitude: location.coords.latitude,
         longitude: location.coords.longitude,
@@ -40,10 +40,19 @@ export function MapForm({ show, close }: MapFormProps) {
         longitudeDelta: 0.001,
       });
     })();
+
+    //console.log(location, 'location');
   }, []);
+
   return (
     <Modal show={show} close={close}>
-      <Text>MapForm</Text>
+      <MapView
+        initialRegion={location}
+        showsUserLocation={true}
+        onRegionChange={locationTemp => setLocation(locationTemp)}
+        style={styles.map}>
+        <Marker draggable={true} coordinate={location} />
+      </MapView>
     </Modal>
   );
 }
