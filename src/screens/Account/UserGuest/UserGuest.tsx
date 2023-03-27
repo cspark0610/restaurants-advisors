@@ -8,7 +8,6 @@ import { screen } from '../../../utils/screenName';
 export function UserGuest() {
   const navigation = useNavigation();
   const goToLogin = () => {
-    console.log('goToLogin');
     navigation.navigate(screen.account.login as never);
   };
 

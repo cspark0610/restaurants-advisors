@@ -5,7 +5,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "start:cache": "expo start -c",
+    "start:c": "expo start -c",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
@@ -18,7 +18,7 @@
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
     "expo": "^48.0.9",
-    "expo-location": "^15.1.1",
+    "expo-location": "15.1.1",
     "firebase": "9.6.7",
     "formik": "^2.2.9",
     "react": "18.2.0",
