@@ -4,8 +4,8 @@ import { Icon, Avatar, Text } from 'react-native-elements';
 import { styles } from './UploadImageForm.styles';
 import * as ImagePicker from 'expo-image-picker';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { v4 } from 'uuid';
 import { LoadingModal } from '../../../Shared';
+import { randomString } from '../../../../utils/randomString';
 
 export function UploadImageForm({ formik }) {
   const [loading, setLoading] = useState(false);
@@ -15,7 +15,7 @@ export function UploadImageForm({ formik }) {
     const blob = await response.blob();
 
     const storage = getStorage();
-    const storageRef = ref(storage, `restaurants/${v4()}`);
+    const storageRef = ref(storage, `restaurants/${randomString()}`);
 
     uploadBytes(storageRef, blob)
       .then(snapshot => {

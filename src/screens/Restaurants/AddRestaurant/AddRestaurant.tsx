@@ -9,18 +9,35 @@ import {
 } from '../../../components/Restaurants/AddRestaurant';
 import { useFormik } from 'formik';
 import { initialValues, validationSchema } from './AddRestaurant.data';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../../../../App';
+import { useNavigation } from '@react-navigation/native';
+import { randomString } from '../../../utils/randomString';
 
 export function AddRestaurant() {
-  const onSubmit = async (formData: any) => {
-    console.log(formData, 'formData');
+  const navigation = useNavigation();
+  const onSubmitForm = async (formData: any) => {
+    try {
+      const newBody = { ...formData };
+      newBody.id = randomString();
+      newBody.createdAt = new Date();
+      const collectionName = 'restaurants';
+      const collectionRef = collection(db, collectionName);
+      await addDoc(collectionRef, newBody);
+
+      navigation.goBack();
+    } catch (error) {
+      console.log(error, 'error onSubmit');
+    }
   };
 
   const formik = useFormik({
     initialValues: initialValues(),
     validateOnChange: false,
     validationSchema: validationSchema(),
-    onSubmit: onSubmit,
+    onSubmit: onSubmitForm,
   });
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <ImageRestaurant images={formik?.values?.images} />
