@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Avatar } from 'react-native-elements';
 import { getAuth, User, UserInfo, updateProfile } from 'firebase/auth';
 import { styles } from './InfoUser.styles';
-import { Account } from '../../../screens/Account/Account';
 import {
   getStorage,
   ref,
@@ -11,10 +10,7 @@ import {
   getDownloadURL,
   StorageReference,
 } from 'firebase/storage';
-import {
-  ImagePickerResponse,
-  launchImageLibrary,
-} from 'react-native-image-picker';
+import * as ImagePicker from 'expo-image-picker';
 
 type InfoUserProps = {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -29,12 +25,15 @@ export function InfoUser({ setLoading, setLoadingText }: InfoUserProps) {
   const [avatar, setAvatar] = useState(photoURL);
 
   const changeAvatar = async () => {
-    const result: ImagePickerResponse = await launchImageLibrary({
-      mediaType: 'photo',
-      quality: 0.5,
-    });
+    const result: ImagePicker.ImagePickerResult =
+      await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [4, 3],
+        quality: 1,
+      });
 
-    if (!result.didCancel) {
+    if (!result.canceled) {
       const uri = result.assets![0].uri!;
       await uploadImageToFirebase(uri, uid);
     }

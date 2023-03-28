@@ -1,17 +1,15 @@
 import React from 'react';
 import { LogBox } from 'react-native';
-//import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-
 import { NavigationContainer } from '@react-navigation/native';
 import { AppNavigation } from './src/navigation/AppNavigation';
 import Toast from 'react-native-toast-message';
-
 import { firebaseConfig } from './src/utils/firebase.config';
 import { initializeApp } from 'firebase/app';
-LogBox.ignoreAllLogs();
 
 import * as Font from 'expo-font';
 import * as Icon from '@expo/vector-icons';
+import 'react-native-get-random-values';
+LogBox.ignoreAllLogs();
 
 export const loadResourcesAsync = async () => {
   return Promise.all([

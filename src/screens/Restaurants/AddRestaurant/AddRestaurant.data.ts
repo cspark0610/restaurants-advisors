@@ -8,6 +8,7 @@ export function initialValues() {
     email: '',
     description: '',
     location: null,
+    images: [],
   };
 }
 
@@ -20,6 +21,7 @@ export function validationSchema() {
       .email('Wrong email format')
       .required('Email is required'),
     description: Yup.string().required('Description is required'),
-    location: Yup.object().required('Location is required'),
+    location: Yup.object(),
+    images: Yup.array().min(1, 'al menos se requiere una imagen'),
   });
 }

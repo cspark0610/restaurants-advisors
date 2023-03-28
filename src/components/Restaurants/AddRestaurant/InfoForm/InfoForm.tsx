@@ -38,7 +38,7 @@ export function InfoForm({ formik }: any) {
           rightIcon={{
             type: 'material-community',
             name: 'map-marker-radius',
-            color: '#c2c2c2',
+            color: getColorIconMap(formik),
             onPress: onOpenCloseIconMap,
           }}
         />
@@ -64,3 +64,13 @@ export function InfoForm({ formik }: any) {
     </>
   );
 }
+
+const getColorIconMap = formik => {
+  if (formik.error?.location) {
+    return '#ff0000';
+  }
+  if (formik.values?.location) {
+    return '#00a680';
+  }
+  return '#c2c2c2';
+};
